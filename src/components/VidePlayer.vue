@@ -146,6 +146,16 @@ onMounted(() => {
       }
     }
   });
+
+  document.addEventListener("contextmenu", (e) => e.preventDefault());
+  document.addEventListener("keydown", function (event) {
+    if (
+      event.key === "F12" ||
+      (event.ctrlKey && event.shiftKey && event.key === "I")
+    ) {
+      event.preventDefault();
+    }
+  });
 });
 
 onBeforeUnmount(() => {
